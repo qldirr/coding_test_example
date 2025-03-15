@@ -1,3 +1,4 @@
+// Todo list 를 <form> 태그 사용한 버전
 const todoList = document.getElementById("todo-list");
 const todoInput = document.querySelector(".todoInput");
 const todoForm = document.getElementById("todo-form");

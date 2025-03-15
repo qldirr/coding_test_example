@@ -1,8 +1,8 @@
+// 백엔드와 연결
 import axios from "axios";
 
 const todoList = document.getElementById("todo-list");
 const todoInput = document.querySelector(".todoInput");
-const todoForm = document.getElementById("todo-form");
 const addBtn = document.getElementById("add-btn");
 
 // ✅ 백엔드 API URL 설정
@@ -110,14 +110,10 @@ async function toggleTodoComplete(checkbox) {
   }
 }
 
-// ✅ 이벤트 핸들러 연결
-todoForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  addTodo();
-});
-
+// ✅ 버튼 클릭 시 할 일 추가
 addBtn.addEventListener("click", addTodo);
 
+// ✅ Enter 키 입력 시 할 일 추가
 todoInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
@@ -125,6 +121,7 @@ todoInput.addEventListener("keydown", (e) => {
   }
 });
 
+// ✅ 할 일 삭제 & 완료 상태 변경
 todoList.addEventListener("click", (e) => {
   const target = e.target;
 

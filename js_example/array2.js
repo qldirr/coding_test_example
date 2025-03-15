@@ -1,6 +1,31 @@
 // slice() - 배열의 일부분을 새 배열로 반환
-const slicedFruits = fruits.slice(1, 3);
-console.log(slicedFruits); // ['grapes', 'mango']
+// 기본적인 배열 slice() 사용법
+const fruits = ["사과", "바나나", "오렌지", "키위", "망고"];
+
+// 인덱스 1부터 3까지 추출 (3은 포함되지 않음)
+const sliced1 = fruits.slice(1, 3);
+console.log(sliced1); // ['바나나', '오렌지']
+
+// 시작 인덱스만 지정 (끝까지 추출)
+const sliced2 = fruits.slice(2);
+console.log(sliced2); // ['오렌지', '키위', '망고']
+
+// 매개변수 없이 사용 (전체 배열 복사)
+const copy = fruits.slice();
+console.log(copy); // ['사과', '바나나', '오렌지', '키위', '망고']
+
+// 음수 인덱스 사용 (뒤에서부터 카운트)
+const sliced3 = fruits.slice(-3, -1);
+console.log(sliced3); // ['오렌지', '키위']
+
+// 전체 배열에서 마지막 두 요소 추출
+const lastTwo = fruits.slice(-2);
+console.log(lastTwo); // ['키위', '망고']
+
+// 원본 배열은 변경되지 않음
+console.log(fruits); // ['사과', '바나나', '오렌지', '키위', '망고']
+
+/////////////////////////////////////////////
 
 // splice() - 배열의 요소를 추가/제거/교체
 const animals = ["cat", "dog", "elephant", "fish"];
